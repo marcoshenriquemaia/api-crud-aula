@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 
+const PORT = process.env.PORT || 3333;
+
 const app = express()
 
 app.use(cors());
@@ -117,6 +119,6 @@ app.put('/toggleTask/:id', (req, res) => {
   return res.status(200).json(todoList)
 })
 
-app.listen(3333, () => {
+app.listen(PORT, () => {
   console.log("server on")
 })
